@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Poppins:wght@300;400;500;600;700&family=Rubik:wght@500;600&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+.navbar-mobile {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-page {
+    background-color: #0F172A;
+}
+
+.home-page h2 {
+    color: white;
+}
+
+.pokemon-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 320px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.pokemon-card:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-5px);
+}
+
+.pokemon-card:hover .pokemon-name {
+    color: #000000;
+}
+
+.pokemon-name {
+    color: #f5f5f5;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.modal-title {
+    text-transform: uppercase;
+}
+
+.pokemon-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.pokemon-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+.pokemon-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.pokemon-image-detail {
+    max-width: 40%;
+    height: auto;
+}
+
+.pokemon-info {
+    flex-grow: 1;
+    padding-left: 20px;
+}
+
+.pokemon-text {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.pokemon-abilities {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.stat-item {
+    text-align: center;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+
+.pokemon-details-header {
+    margin-bottom: 20px;
+}
+
+.pokemon-stats {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.stat-value {
+    margin-top: 5px;
+}
+
+.pokemon-info p {
+    margin-bottom: 10px;
+}
+
+.my-pokemon {
+    background-color: #0F172A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-pokemon h1 {
+    margin-top: 20px;
+    font-size: 2em;
+    color: #f5f5f5;
+}
+
+.catch-pokemon {
+    /* background-image: url(../src/assets/img/hutan_cleanup.jpg);
+    background-color: #000000; */
+}
