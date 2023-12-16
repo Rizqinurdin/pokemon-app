@@ -4,21 +4,22 @@ import NavBarComponent from "./component/NavBarComponent";
 import NavBarBottomComponent from "./component/NavBarBottomComponent";
 import MyPokemon from "./component/MyPokemon";
 import CatchPokemon from "./component/CatchPokemon";
+import { PokemonProvider } from './PokemonContext';
 
 
 
 function App() {
   return (
     <div>
-      <NavBarComponent />
-      <Routes>
-        <Route path="/" Component={HomePage} />
-        <Route path="/myPokemon" Component={MyPokemon} />
-        <Route path="/catch-page" Component={CatchPokemon} />
-
-
-      </Routes>
-      <NavBarBottomComponent />
+      <PokemonProvider>
+        <NavBarComponent />
+        <Routes>
+          <Route path="/" Component={HomePage} />
+          <Route path="/myPokemon" Component={MyPokemon} />
+          <Route path="/catch-page" Component={CatchPokemon} />
+        </Routes>
+        <NavBarBottomComponent />
+      </PokemonProvider>
     </div>
   )
 }

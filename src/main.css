@@ -131,7 +131,140 @@
     color: #f5f5f5;
 }
 
-.catch-pokemon {
-    /* background-image: url(../src/assets/img/hutan_cleanup.jpg);
-    background-color: #000000; */
+.catch-pokemon-content {
+    background-image: url(../src/assets/img/hutan_cleanup.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 800px;
+    height: 470px;
+    margin-left: -130px;
+    color: white;
+    background-color: #0F172A;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+
+@media (max-width: 1200px) {
+    .catch-pokemon-content {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .catch-pokemon-content .button-catch {
+        margin-top: 20px;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .catch-pokemon-content {
+        width: 90%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    .catch-pokemon-content .button-catch {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .catch-pokemon-content {
+        width: 95%;
+        margin: 5px auto;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    .catch-pokemon-content {
+        width: 98%;
+        margin: 5px auto;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .prev-next {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    .prev,
+    .next {
+        width: calc(50% - 5px);
+        max-width: 100px;
+        text-align: center;
+        width: 100px;
+    }
+}
+
+.catch-pokemon-page {
+    background-color: #0F172A;
+}
+
+.pokemon-image-catch {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+.button-catch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.pokemon-list-success {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pokemon-card-success {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.pokemon-image-success {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.mypokemon-page {
+    background-color: #0F172A;
+    color: #f5f5f5;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.pagination-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }

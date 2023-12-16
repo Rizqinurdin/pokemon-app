@@ -2,15 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { httpService } from '../service/listService';
 import { Container, Row, Col, Button, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { usePokemonContext } from '../PokemonContext';
 
 const HomePage = () => {
-    const [pokemonList, setPokemonList] = useState([]);
+
+    const { setPokemonImage } = usePokemonContext();
+
+    const [pokemonList, setPokemonList] = useState([]); ``
     const [startIndex, setStartIndex] = useState(0);
     const [selectedPokemon, setSelectedPokemon] = useState(null);
     const itemsPerPage = 3;
     const [showModal, setShowModal] = useState(false);
     const [selectedImagePokemon, setSelectedImagePokemon] = useState('');
-
 
 
     const fetchPokemonDetails = async () => {
@@ -42,9 +45,12 @@ const HomePage = () => {
     const handleDetailClick = (pokemon) => {
         setSelectedPokemon(pokemon);
         const selectedImagePokemonCatch = pokemon.sprites.other.dream_world.front_default;
+        console.log("selectedImagePokemonCatch", selectedImagePokemonCatch);
         setSelectedImagePokemon(selectedImagePokemonCatch);
+        setPokemonImage(selectedImagePokemonCatch);
         setShowModal(true);
     };
+
 
     const handleCloseModal = () => {
         setShowModal(false);
@@ -75,11 +81,23 @@ const HomePage = () => {
                         ))}
                     </Row>
                     <Row className="justify-content-center">
-                        <Col className="text-center">
-                            <Button variant="secondary" onClick={handlePrevious} disabled={startIndex === 0}>
+                        <Col className="prev-next text-center">
+                            <Button
+                                variant={startIndex === 0 ? "secondary" : "primary"}
+                                className="prev"
+                                onClick={handlePrevious}
+                                disabled={startIndex === 0}
+                                style={{ cursor: startIndex === 0 ? 'not-allowed' : 'pointer' }}
+                            >
                                 Previous
                             </Button>{' '}
-                            <Button variant="secondary" onClick={handleNext} disabled={startIndex + itemsPerPage >= pokemonList.length}>
+                            <Button
+                                variant={startIndex + itemsPerPage >= pokemonList.length ? "secondary" : "primary"}
+                                className="next"
+                                onClick={handleNext}
+                                disabled={startIndex + itemsPerPage >= pokemonList.length}
+                                style={{ cursor: startIndex + itemsPerPage >= pokemonList.length ? 'not-allowed' : 'pointer' }}
+                            >
                                 Next
                             </Button>
                         </Col>
@@ -123,7 +141,7 @@ const HomePage = () => {
                         <Link
                             to={{
                                 pathname: '/catch-page',
-                                state: { selectedImagePokemon }
+                                state: { selectedImagePokemon: selectedImagePokemon }
                             }}
                         >
                             <Button variant="primary">
